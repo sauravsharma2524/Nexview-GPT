@@ -1,8 +1,27 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# NexviewGPT
 
-Currently, two official plugins are available:
+- installed vite bundler for the project
+- installed and configured Tailwind CSS
+- Header
+- Login / Sign up form
+- Routing of Pages
+- form validation
+- useRef hook
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# Features
+-Login/Signup
+   - Sign-in / Sign-up Form
+   - Redirect to Browsing Page
+-Browse (only after authentication)
+   -Header
+   -Main Movie
+      -Trailer in Background
+      -Title & description
+      -Movie Suggestions
+         -MoviesList * N
+-NexviewGPT
+   - Search Bar
+   -Movie suggestions
+
