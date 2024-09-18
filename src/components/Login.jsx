@@ -7,7 +7,6 @@ const Login = () => {
     const [isSignIn, setIsSignIn] = useState(true);
     const [errorMessage, seterrorMessage] = useState(null);
 
-
     const email = useRef(null);
     const password = useRef(null);
 
@@ -20,42 +19,40 @@ const Login = () => {
     }
 
     const ToggleSignInForm = () => {
-
         setIsSignIn(!isSignIn)
-
     }
 
     return (
-        <div
-            className="min-h-screen bg-cover z-0  bg-center flex justify-center items-center"
-        >
+        <div className="min-h-screen bg-cover bg-center flex justify-center items-center">
             <img
-                className="min-h-screen bg-cover bg-center flex justify-center items-center absolute overflow-hidden z-1"
-                src='https://assets.nflxext.com/ffe/siteui/vlv3/85ff76db-39e5-423a-afbc-97d3e74db71b/null/IN-en-20240909-TRIFECTA-perspective_b22117e0-4610-4d57-a695-20f77d241a4a_small.jpg' alt='Background image' />
+                className="min-h-screen w-full absolute object-cover z-1"
+                src='https://assets.nflxext.com/ffe/siteui/vlv3/85ff76db-39e5-423a-afbc-97d3e74db71b/null/IN-en-20240909-TRIFECTA-perspective_b22117e0-4610-4d57-a695-20f77d241a4a_small.jpg'
+                alt='Background image'
+            />
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-            <div className="bg-black relative bg-opacity-80 p-16 rounded-md shadow-lg w-[60%] mt-14 max-w-md">
-                <form onSubmit={(e) => e.preventDefault()} className="space-y-4 justify-center items-center flex-col">
-                    <h2 className="text-4xl font-bold  text-white mb-6 ">
+            <div className="bg-black relative bg-opacity-80 p-6 sm:p-8 md:p-10 lg:p-16 rounded-md shadow-lg w-[90%] sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[30%] mt-10 max-w-lg">
+                <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
                         {isSignIn ? "Sign In" : "Sign Up"}
                     </h2>
                     <div>
-
-                        {!isSignIn && <input
-                            id="Name"
-                            type="Name"
-                            placeholder='Full Name'
-                            required
-                            className="w-full mb-3 px-2 py-3 bg-gray-700 bg-opacity-20 text-white rounded-md focus:ring-white border-gray-500 focus-ring-2 focus:border-gray-700 border-[0.1rem]"
-                        />}
-
+                        {!isSignIn && (
+                            <input
+                                id="Name"
+                                type="text"
+                                placeholder='Full Name'
+                                required
+                                className="w-full mb-3 px-2 py-3 bg-gray-700 bg-opacity-20 text-white rounded-md focus:ring-white border-gray-500 focus:ring-2 focus:border-gray-700 border-[0.1rem]"
+                            />
+                        )}
                         <input
                             ref={email}
                             id="email"
                             type="email"
                             placeholder='Email Address'
                             required
-                            className="w-full px-2 py-3 bg-gray-700 bg-opacity-20 text-white rounded-md focus:ring-white border-gray-500 focus-ring-2 focus:border-gray-700 border-[0.1rem]"
+                            className="w-full px-2 py-3 bg-gray-700 bg-opacity-20 text-white rounded-md focus:ring-white border-gray-500 focus:ring-2 focus:border-gray-700 border-[0.1rem]"
                         />
                     </div>
                     <div>
@@ -65,10 +62,11 @@ const Login = () => {
                             type="password"
                             placeholder='Password'
                             required
-                            className="w-full px-2 py-3 border-gray-500 bg-gray-700 bg-opacity-20 text-white rounded-lg focus:border-gray-700 border-[0.1rem] focus:ring-2 focus:ring-white"
+                            className="w-full px-2 py-3 border-gray-500 bg-gray-700 bg-opacity-20 text-white rounded-lg focus:border-gray-700 focus:ring-2 focus:ring-white border-[0.1rem]"
                         />
                     </div>
-                    <p className='text-lg font-semibold text-red-600'>{errorMessage}</p>                    <button
+                    <p className='text-lg font-semibold text-red-600'>{errorMessage}</p>
+                    <button
                         onClick={handleButtonClick}
                         className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600"
                     >
