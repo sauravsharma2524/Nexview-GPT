@@ -8,7 +8,11 @@
 - Routing of Pages
 - form validation
 - useRef hook
-
+- firebase setup 
+- deployed to production
+- create sign up user account
+- create sign in user
+- user authentication completed
 
 # Features
 -Login/Signup

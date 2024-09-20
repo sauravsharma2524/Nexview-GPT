@@ -2,6 +2,9 @@ import React, { useRef } from 'react'
 import Header from './Header'
 import { useState } from 'react';
 import { DataValidation } from '../utils/Validate';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../utils/Firebase';
+
 const Login = () => {
 
     const [isSignIn, setIsSignIn] = useState(true);
@@ -14,8 +17,37 @@ const Login = () => {
         const validationMessage = DataValidation(email.current.value, password.current.value)
         seterrorMessage(validationMessage)
 
-        console.log(validationMessage)
+        if (validationMessage) return;
 
+        if (!isSignIn) {
+            // sign up logic
+            createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    seterrorMessage(errorCode + " " + errorMessage)
+                    console.log(errorCode + " " + errorMessage);
+
+                })
+
+        } else {
+            // sign in logic
+            signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+                .then((userCredential) => {
+                    const user = userCredential;
+                    console.log(user);
+                    
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    seterrorMessage(errorCode + " " + errorMessage)
+                })
+        }
     }
 
     const ToggleSignInForm = () => {
@@ -31,7 +63,7 @@ const Login = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-            <div className="bg-black relative bg-opacity-80 p-6 sm:p-8 md:p-10 lg:p-16 rounded-md shadow-lg w-[90%] sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[30%] mt-10 max-w-lg">
+            <div className="bg-black relative bg-opacity-70 p-9 sm:p-8 md:p-10 lg:p-10 rounded-md shadow-lg w-[90%] sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[30%] mt-10 max-w-lg">
                 <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
                         {isSignIn ? "Sign In" : "Sign Up"}
@@ -96,4 +128,4 @@ const Login = () => {
     );
 }
 
-export default Login
+export default Login    
