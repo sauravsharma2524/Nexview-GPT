@@ -13,6 +13,9 @@
 - create sign up user account
 - create sign in user
 - user authentication completed
+- created redux store with userSlice
+- used authStateChange Api for getting the sognin and signout details
+
 
 # Features
 -Login/Signup
