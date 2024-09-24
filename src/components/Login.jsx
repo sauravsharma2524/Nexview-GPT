@@ -2,9 +2,11 @@ import React, { useRef } from 'react'
 import Header from './Header'
 import { useState } from 'react';
 import { DataValidation } from '../utils/Validate';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../utils/Firebase';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/UserSlice';
 
 const Login = () => {
 
@@ -12,22 +14,37 @@ const Login = () => {
     const [errorMessage, seterrorMessage] = useState(null);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
 
     const email = useRef(null);
     const password = useRef(null);
+    const name = useRef(null)
+
 
     const handleButtonClick = () => {
         const validationMessage = DataValidation(email.current.value, password.current.value)
         seterrorMessage(validationMessage)
-
         if (validationMessage) return;
 
         if (!isSignIn) {
             // sign up logic
-            createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+            createUserWithEmailAndPassword(auth, email.current.value, password.current.value, )
                 .then((userCredential) => {
                     const user = userCredential.user;
                     console.log(user);
+                    updateProfile(user, {
+                        displayName: name.current.vlaue, 
+                    }).then(() => {
+                        const { uid, email, displayName } = auth;
+                        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+                        // Profile updated!
+                        console.log(displayName);
+                        console.log('profile updated')
+                    }).catch((error) => {
+                        // An error occurred
+                        // ...
+                    });
                     navigate("/browse")
                 })
                 .catch((error) => {
@@ -60,7 +77,10 @@ const Login = () => {
 
     return (
         <div>
-                <Header signIn={isSignIn} />
+                <div className=" w-full flex justify-between absolute z-50">
+                    <img className="w-48 lg:mx-36 xl:mx-36 md:mx-36 cursor-pointer  pt-1" src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix Logo" />
+
+                </div>
             <div className="min-h-screen bg-cover bg-center flex justify-center items-center ">
                 <img
                     className="min-h-screen w-full absolute object-cover z-1"
@@ -78,6 +98,7 @@ const Login = () => {
                             {!isSignIn && (
                                 <input
                                     id="Name"
+                                    ref={name}
                                     type="text"
                                     placeholder='Full Name'
                                     required
