@@ -12,6 +12,7 @@ const Login = () => {
 
     const [isSignIn, setIsSignIn] = useState(true);
     const [errorMessage, seterrorMessage] = useState(null);
+    
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const Login = () => {
     const email = useRef(null);
     const password = useRef(null);
     const name = useRef(null)
+    const [userName, setUserName] = useState(null)
 
 
     const handleButtonClick = () => {
@@ -34,13 +36,16 @@ const Login = () => {
                     const user = userCredential.user;
                     console.log(user);
                     updateProfile(user, {
-                        displayName: name.current.vlaue, 
+                        displayName: name.current.value, 
                     }).then(() => {
-                        const { uid, email, displayName } = auth;
+                        const { uid, email, displayName } = auth.currentUser;
                         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
                         // Profile updated!
-                        console.log(displayName);
+                        setUserName(displayName)
                         console.log('profile updated')
+                        console.log(email);
+                        
+                        console.log(displayName);
                     }).catch((error) => {
                         // An error occurred
                         // ...
@@ -79,7 +84,9 @@ const Login = () => {
         <div>
                 <div className=" w-full flex justify-between absolute z-50">
                     <img className="w-48 lg:mx-36 xl:mx-36 md:mx-36 cursor-pointer  pt-1" src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix Logo" />
+                <div>{userName}</div>
 
+                
                 </div>
             <div className="min-h-screen bg-cover bg-center flex justify-center items-center ">
                 <img
@@ -97,14 +104,14 @@ const Login = () => {
                         <div>
                             {!isSignIn && (
                                 <input
+                                ref={name}
                                     id="Name"
-                                    ref={name}
                                     type="text"
                                     placeholder='Full Name'
                                     required
                                     className="w-full mb-3 px-2 py-3 bg-gray-700 bg-opacity-20 text-white rounded-md focus:ring-white border-gray-500 focus:ring-2 focus:border-gray-700 border-[0.1rem]"
-                                />
-                            )}
+                                    />
+                                )}
                             <input
                                 ref={email}
                                 id="email"
