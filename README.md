@@ -14,7 +14,11 @@
 - create sign in user
 - user authentication completed
 - created redux store with userSlice
-- used authStateChange Api for getting the sognin and signout details
+- used authStateChange Api for getting the signin and signout details
+- update profile
+- username on navbar using redux on browse page
+ 
+
 
 
 # Features
