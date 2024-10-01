@@ -17,7 +17,13 @@
 - used authStateChange Api for getting the signin and signout details
 - update profile
 - username on navbar using redux on browse page
- 
+- without signing-in user can only access login / signup page
+- created tmdb account
+- got api key and access token
+- got movies data
+- fetched movies data 
+- storing movies data in redux store using movies slice
+
 
 
 
