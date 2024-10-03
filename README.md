@@ -23,6 +23,23 @@
 - got movies data
 - fetched movies data 
 - storing movies data in redux store using movies slice
+- built nowPlayingMoviesHook 
+- updateed store with moviesData
+- planning for main and secondary container
+- fetched data for movie trialer video
+- embedded the youtube video and made it autoplay and mute
+- made web app responsive 
+
+<!-- BROWSE PAGE -->
+ - Main Container
+   - Background Video 
+   - Video title
+
+  - Secondary Container 
+    - Movies Lists * n
+      - Movie Cards * n
+
+
 
 
 

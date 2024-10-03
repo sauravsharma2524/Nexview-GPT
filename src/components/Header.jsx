@@ -27,14 +27,14 @@ const Header = ({  }) => {
          
     }
 
-    return <div className=" w-full flex justify-between  absolute z-50">
+    return <div className="bg-gradient-to-b from-black w-full flex justify-between lg:absolute md:absolute sm:absolute  z-50">
         <img className="w-48 lg:mx-36 xl:mx-36 md:mx-36 cursor-pointer  pt-1" src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix Logo" />
         {user && (
             <div className="flex justify-between items-center">
-                <button onClick={handleSignOut} className="hover:bg-red-500 text-white m-5 p-2 font-semibold rounded-lg bg-red-600 ">
+                <div className=' mx-2 p-2 text-lg font-medium border border-red-100 rounded-lg text-white'>{user?.displayName ? user?.displayName : "no username" }</div>
+                <button class="hover:bg-red-600 text-white font-semibold rounded-lg border border-red-600 p-1 sm:m-5 m-2" onclick="handleSignOut()">
                     Sign out
                 </button>
-                <div className='bg-orange-500 mx-2 p-2 text-lg font-medium rounded-lg text-white'>{user?.displayName ? user?.displayName : "no username" }</div>
             </div>
         )}
     </div>

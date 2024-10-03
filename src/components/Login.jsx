@@ -88,7 +88,7 @@ const Login = () => {
                 </div>
             <div className="min-h-screen flex bg-cover bg-center justify-center items-center ">
                 <img
-                    className="min-h-screen w-full absolute object-cover z-1"
+                    className=" h-[100%] w-full absolute object-cover z-1"
                     src='https://assets.nflxext.com/ffe/siteui/vlv3/85ff76db-39e5-423a-afbc-97d3e74db71b/null/IN-en-20240909-TRIFECTA-perspective_b22117e0-4610-4d57-a695-20f77d241a4a_small.jpg'
                     alt='Background image'
                 />
