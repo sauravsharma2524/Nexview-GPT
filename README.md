@@ -28,7 +28,7 @@
 - planning for main and secondary container
 - fetched data for movie trialer video
 - embedded the youtube video and made it autoplay and mute
-- made web app responsive 
+- made web app responsive for all device sizes till the browse page video container
 
 <!-- BROWSE PAGE -->
  - Main Container
