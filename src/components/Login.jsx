@@ -88,11 +88,11 @@ const Login = () => {
                 </div>
             <div className="min-h-screen flex bg-cover bg-center justify-center items-center ">
                 <img
-                    className=" h-[100%] w-full absolute object-cover z-1"
+                    className="min-h-[130%] w-full absolute object-cover z-1"
                     src='https://assets.nflxext.com/ffe/siteui/vlv3/85ff76db-39e5-423a-afbc-97d3e74db71b/null/IN-en-20240909-TRIFECTA-perspective_b22117e0-4610-4d57-a695-20f77d241a4a_small.jpg'
                     alt='Background image'
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div className="absolute inset-0  bg-black bg-opacity-40"></div>
 
                 <div className="bg-black relative bg-opacity-70 p-9 sm:p-8 md:p-10 lg:p-10 rounded-md shadow-lg w-[90%] sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[30%] mt-10 max-w-lg">
                     <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
