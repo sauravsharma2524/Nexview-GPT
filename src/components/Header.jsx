@@ -15,14 +15,12 @@ const Header = ({  }) => {
 
 
         signOut(auth).then(() => {
-            console.log("logged out succesfully");
             navigate("/");
-
             // Sign-out successful.
+
         }).catch((error) => {
-            console.log("error in logging out");
-            
             // An error happened.
+            
         });
          
     }

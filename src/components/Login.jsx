@@ -35,7 +35,7 @@ const Login = () => {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value, )
                 .then((userCredential) => {
                     const user = userCredential.user;
-                    console.log(user);
+                    
                     updateProfile(user, {
                         displayName: name.current.value, 
                     }).then(() => {
@@ -43,10 +43,6 @@ const Login = () => {
                         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
                         // Profile updated!
                         setUserName(displayName)
-                        console.log('profile updated')
-                        console.log(email);
-                        
-                        console.log(displayName);
                     }).catch((error) => {
                         // An error occurred
                         // ...
@@ -57,8 +53,6 @@ const Login = () => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     seterrorMessage(errorCode + " " + errorMessage)
-                    console.log(errorCode + " " + errorMessage);
-
                 })
 
         } else {
@@ -66,7 +60,6 @@ const Login = () => {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential;
-                    console.log(user);
                     navigate("/browse")
                 })
                 .catch((error) => {
