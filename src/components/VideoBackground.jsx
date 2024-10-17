@@ -9,7 +9,7 @@ import VideoTitle from './VideoTitle'
 const VideoBackground = ({ movieId }) => {
 
   const movie = useSelector((store) => store.movies?.nowPlayingMovies)
-  const mainMovie = movie[8];
+  const mainMovie = movie[0];
   const trailerVideo = useSelector((store) => store?.movies?.movieTrailer)
 
   

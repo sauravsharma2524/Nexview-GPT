@@ -29,6 +29,9 @@
 - fetched data for movie trialer video
 - embedded the youtube video and made it autoplay and mute
 - made web app responsive for all device sizes till the browse page video container
+- built the secondary container , movie list container and movie card container
+- added poster image url to constants file 
+- fetched poster image and displayed in cards
 
 <!-- BROWSE PAGE -->
  - Main Container
