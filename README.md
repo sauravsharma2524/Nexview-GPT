@@ -32,6 +32,10 @@
 - built the secondary container , movie list container and movie card container
 - added poster image url to constants file 
 - fetched poster image and displayed in cards
+- built hooks for fetching movie list data  
+- built all the movie lists (top rated, upcoming, popular, now playing)
+
+
 
 <!-- BROWSE PAGE -->
  - Main Container

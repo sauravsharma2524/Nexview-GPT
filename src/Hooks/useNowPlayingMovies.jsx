@@ -7,7 +7,6 @@ const useNowPlayingMovies = () => {
     // getting the movies data
     const dispatch = useDispatch();
 
-
     const getNowPayingMovies = async () => {
         const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?IN&page=1', OPTIONS);
         const json = await data.json();
@@ -20,9 +19,5 @@ const useNowPlayingMovies = () => {
         getNowPayingMovies()
     }, []);
 }
-
-
-
-
 
 export default useNowPlayingMovies;

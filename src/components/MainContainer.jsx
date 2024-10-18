@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import VideoTitle from "./VideoTitle";
 import VideoBackground from "./VideoBackground";
-import SecondaryContainer from "./SecondaryContainer";
+
 
 const MainContainer = () => {
 
@@ -12,7 +12,6 @@ const MainContainer = () => {
     if (!movies) return;
 
     const mainMovie = movies[0];
-    console.log(mainMovie?.overview);
 
     return (
         <div className="z-10">

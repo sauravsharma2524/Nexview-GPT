@@ -1,14 +1,19 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import getNowPayingMovies from "../Hooks/useNowPlayingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import useNowPlayingMovies from "../Hooks/useNowPlayingMovies";
+import usePopularMovies from "../Hooks/usePopularMovies";
+import useTopRatedMovies from "../Hooks/useTopRatedMovies";
+import useUpcomingMovies from "../Hooks/useUpcomingMovies";
 
 const Browse = () => {
+    useNowPlayingMovies();
+    usePopularMovies();
+    useTopRatedMovies();
+    useUpcomingMovies();
 
-    console.log(getNowPayingMovies()
-    );
 
 
     return <div>

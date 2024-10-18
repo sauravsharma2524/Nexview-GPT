@@ -3,12 +3,6 @@ import Body from "./components/Body"
 import Header from "./components/Header"
 import AppStore from "./utils/AppStore"
 
-
- 
-
-
-
-
 const App = () => {
 
   return <div>

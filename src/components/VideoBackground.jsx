@@ -1,17 +1,12 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { OPTIONS } from '../utils/constants'
-import { useDispatch } from 'react-redux'
-import { addVideoTrailer } from '../utils/MoviesSlice'
 import { useSelector } from 'react-redux'
 import useMovieTrailer from '../Hooks/useMovieTrailer'
-import VideoTitle from './VideoTitle'
+
 const VideoBackground = ({ movieId }) => {
 
   const movie = useSelector((store) => store.movies?.nowPlayingMovies)
   const mainMovie = movie[0];
   const trailerVideo = useSelector((store) => store?.movies?.movieTrailer)
-
   
   useMovieTrailer(movieId);
 
