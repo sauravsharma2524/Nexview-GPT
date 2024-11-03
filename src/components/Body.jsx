@@ -2,6 +2,8 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './Login'
 import Browse from './Browse'
+import WatchMovie from './WatchMovie'
+import ProtectedRoute from './ProtectedRoute'
 
 const Body = () => {
      
@@ -14,6 +16,12 @@ const Body = () => {
         {
             path: "/browse",
             element: <Browse/>
+        },
+        {
+            path: "/watch/:id",
+            element: 
+                <WatchMovie/>
+            
         }
     ])
 
