@@ -24,7 +24,7 @@ const WatchMovie = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       />
 
-      
+      <SecondaryContainer />
 
       <p>Now Watching Movie ID: {id}</p>
     </div>
