@@ -34,6 +34,14 @@
 - fetched poster image and displayed in cards
 - built hooks for fetching movie list data  
 - built all the movie lists (top rated, upcoming, popular, now playing)
+- built watch movie page
+- created watch now button on movie cards and passed that movie's id as params to watch page using navigate
+- accepted the id passed from cards to watch page using useParams hook
+- got the movie trailer in watch page using the useselector
+-  passed the id to usemovietrailer hook and got the trailer video key
+- using i frame tag passed the key for the video and play the trailer
+- made the playing trailer dynamic by using useefect in usemoviestrailer everytime the id changes the useefect is called and changes the movie trailer video
+- 
 
 
 

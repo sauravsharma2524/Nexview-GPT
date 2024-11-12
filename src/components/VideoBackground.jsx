@@ -31,9 +31,6 @@ const VideoBackground = ({ movieId }) => {
             </p>
           </div>
         </div>
-
-
-       
       </div>
     </div>
   )
