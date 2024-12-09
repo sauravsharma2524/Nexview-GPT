@@ -42,6 +42,12 @@
 - using i frame tag passed the key for the video and play the trailer
 - made the playing trailer dynamic by using useefect in usemoviestrailer everytime the id changes the useefect is called and changes the movie trailer video
 - completed the watch movie page if anyone clicks on any video at any page that video will be played in the watch movie page at the top and other movie cards will be shown below it 
+- gpt search button 
+- created gpt slice with toggleGptView reducer and show 
+- toggle feature of gpt search button (on click => it will render gpt search page / toggle => Main container)
+
+
+
 
 
 
